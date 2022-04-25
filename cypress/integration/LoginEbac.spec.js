@@ -17,11 +17,20 @@ DocTeste({
 //contexto do teste ('string entre aspas simples' inicio de função)*/
 context('Funcionalidade Login', () => {
     
+    //O será feito antes de cada um dos testes    
+    beforeEach(() => { 
+        //comando visit acessa o link informado
+        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    });
+
+     //O será feito depois de cada um dos testes
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     //estrutura do cenário
     it('Deve fazer login com sucesso', () =>{
 
-        //comando visit acessa o link informado
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
         cy.get('#username').type('aluno_ebac@teste.com')
         cy.get('#password').type('teste@teste.com')
         cy.get('.woocommerce-form > .button').click()
@@ -32,7 +41,6 @@ context('Funcionalidade Login', () => {
 
     it('Deve exibir uma mensagem de erro ao inserir usuario invalido', ()=>{
 
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
         cy.get('#username').type('aluno.ebac@teste.com')
         cy.get('#password').type('teste@teste.com')
         cy.get('.woocommerce-form > .button').click()
@@ -42,7 +50,6 @@ context('Funcionalidade Login', () => {
 
     it('Deve exibir uma mensagem de erro ao inserir senha invalida', ()=>{
 
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
         cy.get('#username').type('aluno_ebac@teste.com')
         cy.get('#password').type('teste@teste..com')
         cy.get('.woocommerce-form > .button').click()
