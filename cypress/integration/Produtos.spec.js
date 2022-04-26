@@ -3,12 +3,12 @@ var faker = require('faker');
 
 /*
 DocTeste({
-    Rotina: 
-    Objetivo:
-    TelaPrincipal:
-    PreRequisitos:
-    Descricao:
-    ResultadoEsperado:
+    Rotina: Compra
+    Objetivo: Selecionar um produto da lista e realizar a adicao dele no carrinho para compra
+    TelaPrincipal: Início|Clothing
+    PreRequisitos: Ter produtos disponiveis para compra
+    Descricao: Acessar a plataforma de compra de roupas, selecionar um item da lista. Realizar a escolha de cor e tamanho e definir a quantidade da ompra. Adicionar no carrinho e validar quantidade adicionada
+    ResultadoEsperado: O sistema deverá realizar a adição correta de itens ao carrinho, bloqueando o usuario caso nao selecione cor e tamanho e tambem caso o produto nao exista mais em estoque
     AnalistaOrigem: Manoela Marie Mulhmann
 })
 */  

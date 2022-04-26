@@ -2,12 +2,13 @@
     var faker = require('faker');
 /*
 DocTeste({
-    Rotina: 
-    Objetivo:
-    TelaPrincipal:
-    PreRequisitos:
-    Descricao:
-    ResultadoEsperado:
+    Rotina: Detalhes da conta
+    Objetivo: Realizar um novo cadastro na plataforma e realizar a finalização com o restante dos dados da conta, como nome e sobrenome
+    TelaPrincipal: Home|Minha conta|
+    PreRequisitos: Não há
+    Descricao: Acessar a plataforma, informar um email não cadastrado e uma senha dentro dos parametros obirgatorios, clicar em registrar
+               Entrar na tela de 'Detalhes da conta' e preencher compo de nome e sobrenome
+    ResultadoEsperado: O sistema deverá permitir que sejam registrados novos usuarios e bloquear caso seja utilizado um usuario existente para que este usuario realize entao o logine nao o novo registro
     AnalistaOrigem: Manoela Marie Mulhmann
 })
 */  
@@ -19,8 +20,8 @@ describe('Funcionalidade Pré Cadastro', () => {
     });
 
     it('Deve completar o pré cadastro com sucesso', () => {
-        let emailFaker = faker.internet.email()
-        let nomeFaker  = faker.name.firstName()
+        let emailFaker       = faker.internet.email()
+        let nomeFaker        = faker.name.firstName()
         let sobrenomeFaker   = faker.name.lastName(nomeFaker)
         
         cy.get('#reg_email').type(emailFaker)
